@@ -44,6 +44,9 @@ class MahasiswaController extends Controller
             'Nama' => 'required',
             'Kelas' => 'required',
             'Jurusan' => 'required',
+            'Email' => 'required',
+            'Alamat' => 'required',
+            'TTL' => 'required',
         ]);
         Mahasiswa::create($request->all());
         return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa Berhasil Ditambahkan');
@@ -83,10 +86,13 @@ class MahasiswaController extends Controller
     public function update(Request $request, $nim)
     {
         $request->validate([
-            'nim' => 'required',
-            'nama' => 'required',
-            'kelas' => 'required',
-            'jurusan' => 'required',
+            'Nim' => 'required',
+            'Nama' => 'required',
+            'Kelas' => 'required',
+            'Jurusan' => 'required',
+            'Email' => 'required',
+            'Alamat' => 'required',
+            'TTL' => 'required',
         ]);
         Mahasiswa::where('nim', $nim)->update($request->except(['_token', '_method']));
 
