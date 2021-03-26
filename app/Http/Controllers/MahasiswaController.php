@@ -58,9 +58,14 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($nim)
+    public function show(Request $request, $nim)
     {
-        $Mahasiswa = Mahasiswa::where('nim', $nim)->first();
+        $nama = $request->get('q');
+        if ($nama == null) {
+            $Mahasiswa = Mahasiswa::where('nim', $nim)->first();
+        } else {
+            $Mahasiswa = Mahasiswa::where('nama', $nama)->first();
+        }
         return view('mahasiswa.detail', compact('Mahasiswa'));
     }
 
