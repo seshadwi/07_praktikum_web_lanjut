@@ -22,7 +22,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="Nim">Nim</label> 
-                        <input type="text" name="Nim" class="form-control" id="Nim" aria-describedby="Nim" > 
+                        <input type="number" name="Nim" class="form-control" id="Nim" aria-describedby="Nim" > 
                     </div>
                     <div class="form-group">
                         <label for="Nama">Nama</label> 
@@ -30,7 +30,11 @@
                     </div>
                     <div class="form-group">
                         <label for="Kelas">Kelas</label> 
-                        <input type="text" name="Kelas" class="form-control" id="Kelas" aria-describedby="password" > 
+                        <select class="form-control" name="Kelas" id="Kelas">
+                            @foreach ($kelas as $item)
+                                <option value="{{$item->id}}">{{$item->nama_kelas}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="Jurusan">Jurusan</label> 
@@ -38,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <label for="Email">Email</label> 
-                        <input type="text" name="Email" class="form-control" id="Email" aria-describedby="Email" > 
+                        <input type="email" name="Email" class="form-control" id="Email" aria-describedby="Email" > 
                     </div>
                     <div class="form-group">
                         <label for="Alamat">Alamat</label> 

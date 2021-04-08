@@ -8,19 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class Mahasiswa extends Model
 {
     protected $table = 'mahasiswa';
-    protected $primaryKey = 'id_mahasiswa';
+    protected $primaryKey = 'nim';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'Nim',
-        'Nama',
-        'Kelas',
-        'Jurusan',
-        'Email',
-        'Alamat',
-        'TTL'
+        'nim',
+        'nama',
+        'kelas_id',
+        'jurusan',
+        'email',
+        'alamat',
+        'ttl'
     ];
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class);
+    }
 }
