@@ -52,8 +52,9 @@
                 <td>{{ $mhs->ttl }}</td>
                 <td>
                     <form action="{{ route('mahasiswa.destroy',['mahasiswa'=>$mhs->nim]) }}" method="POST">
-                        <a class="btn btn-info" href="{{ route('mahasiswa.show',$mhs->nim) }}">Show</a>
+                        <a class="btn btn-success" href="{{ route('mahasiswa.show',$mhs->nim) }}">Show</a>
                         <a class="btn btn-primary" href="{{ route('mahasiswa.edit',$mhs->nim) }}">Edit</a>
+                        <a class="btn btn-secondary" href="{{ route('mahasiswa.nilai',$mhs->nim) }}">Nilai</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
