@@ -11,6 +11,7 @@
                     
                     @if ($Mahasiswa)
                         <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><img class="w-50" src="{{asset('storage/'.$Mahasiswa->foto)}}"></li>
                             <li class="list-group-item"><b>Nim: </b>{{$Mahasiswa->nim}}</li>
                             <li class="list-group-item"><b>Nama: </b>{{$Mahasiswa->nama}}</li>
                             <li class="list-group-item"><b>Kelas: </b>{{$Mahasiswa->kelas->nama_kelas}}</li>

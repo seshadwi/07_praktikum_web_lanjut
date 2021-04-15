@@ -21,7 +21,8 @@ class Mahasiswa extends Model
         'jurusan',
         'email',
         'alamat',
-        'ttl'
+        'ttl',
+        'foto',
     ];
     public function kelas()
     {
